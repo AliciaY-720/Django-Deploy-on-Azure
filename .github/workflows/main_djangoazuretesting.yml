@@ -62,12 +62,12 @@ jobs:
         run: unzip release.zip
 
       
-#      - name: Login to Azure
-#        uses: azure/login@v1
-#        with:
-#          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CA664DB6994E489197AB9E3C8840AAE4 }}
-#          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3EFCD4102DD94912AD3C4A9DD9CBB6B4 }}
-#          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FA038DD0C33444469A4F063742A7845E }}
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CA664DB6994E489197AB9E3C8840AAE4 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3EFCD4102DD94912AD3C4A9DD9CBB6B4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FA038DD0C33444469A4F063742A7845E }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -75,6 +75,6 @@ jobs:
         with:
           app-name: 'djangoazuretesting'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C29BCA7C0EF444F5857A76114D27B266 }}
+#          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C29BCA7C0EF444F5857A76114D27B266 }}
 
           
